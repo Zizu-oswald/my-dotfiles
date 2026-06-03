@@ -3,12 +3,16 @@
 set -e
 
 DOTFILES="$HOME/.dotfiles"
+CUSTOM="$HOME/.dotfiles/.oh-my-zsh/custom"
+TMUXPLUG="$DOTFILES/.tmux/plugins"
+
+mkdir -p "$TMUXPLUG"
+mkdir -p "$CUSTOM/plugins"
+mkdir -p "$CUSTOM/themes"
 
 if [ ! -d "$HOME/.dotfiles/.oh-my-zsh" ]; then
     git clone https://github.com/ohmyzsh/ohmyzsh "$HOME/.dotfiles/.oh-my-zsh"
 fi
-
-CUSTOM="$HOME/.dotfiles/.oh-my-zsh/custom"
 
 if [ ! -d "$CUSTOM/plugins/zsh-bat" ]; then
     git clone https://github.com/fdellwing/zsh-bat "$CUSTOM/plugins/zsh-bat"
@@ -20,10 +24,6 @@ fi
 
 if [ ! -d "$CUSTOM/plugins/fzf-zsh-plugin" ]; then
     git clone https://github.com/unixorn/fzf-zsh-plugin "$CUSTOM/plugins/fzf-zsh-plugin"
-fi
-
-if [ ! -d "$CUSTOM/plugins/eza" ]; then
-    git clone https://github.com/eza-community/eza "$CUSTOM/plugins/eza"
 fi
 
 if [ ! -d "$CUSTOM/plugins/zsh-you-should-use" ]; then
@@ -42,9 +42,9 @@ if [ ! -d "$CUSTOM/plugins/zsh-autocomplete" ]; then
     git clone https://github.com/marlonrichert/zsh-autocomplete "$CUSTOM/plugins/zsh-autocomplete"
 fi
 
-if [ ! -d "$CUSTOM/plugins/fast-syntax-highlighting" ]; then
-    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$CUSTOM/plugins/fast-syntax-highlighting"
-fi
+# if [ ! -d "$CUSTOM/plugins/fast-syntax-highlighting" ]; then
+#     git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$CUSTOM/plugins/fast-syntax-highlighting"
+# fi
 
 if [ ! -d "$CUSTOM/plugins/zsh-autosuggestions" ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions "$CUSTOM/plugins/zsh-autosuggestions"
@@ -57,8 +57,6 @@ fi
 if [ ! -d "$HOME/.dotfiles/.zsh-syntax-highlighting" ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting "$HOME/.dotfiles/.zsh-syntax-highlighting"
 fi
-
-TMUXPLUG="$DOTFILES/.tmux/plugins"
 
 if [ ! -d "$TMUXPLUG/tpm" ]; then
     git clone https://github.com/tmux-plugins/tpm "$TMUXPLUG/tpm"
