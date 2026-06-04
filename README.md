@@ -12,7 +12,6 @@ Managed with **GNU Stow** + **Git**.
 * tmux
 * Neovim
 * Git
-* Xresources
 * shell plugins & completions
 
 ---
@@ -61,38 +60,7 @@ eza \
 ripgrep \
 fd-find \
 curl \
-wget \
-yazi
-```
-
-Notes:
-
-* Debian/Ubuntu package for `fd` is named **`fd-find`**
-* command alias may be needed:
-
-```bash
-ln -s $(which fdfind) ~/.local/bin/fd
-```
-
----
-
-## Fedora / RHEL / RPM based
-
-```bash
-sudo dnf install -y \
-git \
-stow \
-zsh \
-tmux \
-neovim \
-fzf \
-bat \
-eza \
-ripgrep \
-fd-find \
-curl \
-wget \
-yazi
+wget 
 ```
 
 ---
@@ -130,6 +98,7 @@ stow .
 ---
 
 # Bootstrap dependencies
+## Works on Arch based distributions but on Debian based can be troubles because of old packages (fzf)
 
 Run:
 

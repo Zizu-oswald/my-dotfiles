@@ -7,12 +7,13 @@ CUSTOM="$HOME/.dotfiles/.oh-my-zsh/custom"
 TMUXPLUG="$DOTFILES/.tmux/plugins"
 
 mkdir -p "$TMUXPLUG"
-mkdir -p "$CUSTOM/plugins"
-mkdir -p "$CUSTOM/themes"
 
 if [ ! -d "$HOME/.dotfiles/.oh-my-zsh" ]; then
     git clone https://github.com/ohmyzsh/ohmyzsh "$HOME/.dotfiles/.oh-my-zsh"
 fi
+
+mkdir -p "$CUSTOM/plugins"
+mkdir -p "$CUSTOM/themes"
 
 if [ ! -d "$CUSTOM/plugins/zsh-bat" ]; then
     git clone https://github.com/fdellwing/zsh-bat "$CUSTOM/plugins/zsh-bat"
@@ -41,10 +42,6 @@ fi
 if [ ! -d "$CUSTOM/plugins/zsh-autocomplete" ]; then
     git clone https://github.com/marlonrichert/zsh-autocomplete "$CUSTOM/plugins/zsh-autocomplete"
 fi
-
-# if [ ! -d "$CUSTOM/plugins/fast-syntax-highlighting" ]; then
-#     git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$CUSTOM/plugins/fast-syntax-highlighting"
-# fi
 
 if [ ! -d "$CUSTOM/plugins/zsh-autosuggestions" ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions "$CUSTOM/plugins/zsh-autosuggestions"
