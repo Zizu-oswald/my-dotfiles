@@ -111,7 +111,7 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 7
+    gaps 6
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -159,7 +159,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 1.5
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -182,14 +182,14 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        //active-gradient from="#80c8ff" to="#c7ff7f" angle=45
-        //active-gradient from="#cba6f7" to="#89dceb" angle=45 in="oklch"
-    	//active-gradient from="#a6e3a1" to="#94e2d5" angle=180 in="oklch"
+        // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
+        // active-gradient from="#cba6f7" to="#89dceb" angle=45 in="oklch"
+    	// active-gradient from="#a6e3a1" to="#94e2d5" angle=180 in="oklch"
     	active-gradient from="#7bb377" to="#6fb0a4" angle=180 in="oklch"
-    	//active-gradient from="#89b4fa" to="#89b4fa00" angle=0 in="oklch"
-    	//active-gradient from="#89b4fa" to="#f5c2e7" angle=45 in="oklch longer hue"
-    	//active-gradient from="#6f8fc8" to="#c29fc7" angle=45 in="oklch longer hue"
-    	//active-gradient from="#74c7ec" to="#89b4fa" angle=45 in="oklch"
+    	// active-gradient from="#89b4fa" to="#89b4fa00" angle=0 in="oklch"
+    	// active-gradient from="#89b4fa" to="#f5c2e7" angle=45 in="oklch longer hue"
+    	// active-gradient from="#6f8fc8" to="#c29fc7" angle=45 in="oklch longer hue"
+    	// active-gradient from="#74c7ec" to="#89b4fa" angle=45 in="oklch"
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -204,7 +204,7 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
+        width 3
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -483,8 +483,8 @@ binds {
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
-    Mod+I              { focus-workspace-down; }
-    Mod+U              { focus-workspace-up; }
+    Mod+U              { focus-workspace-down; }
+    Mod+I              { focus-workspace-up; }
     Mod+Shift+Page_Down { move-column-to-workspace-down; }
     Mod+Shift+Page_Up   { move-column-to-workspace-up; }
     Mod+Shift+I         { move-column-to-workspace-down; }
@@ -496,8 +496,8 @@ binds {
 
     Mod+Ctrl+Page_Down { move-workspace-down; }
     Mod+Ctrl+Page_Up   { move-workspace-up; }
-    Mod+Ctrl+I         { move-workspace-down; }
-    Mod+Ctrl+U         { move-workspace-up; }
+    Mod+Ctrl+U         { move-workspace-down; }
+    Mod+Ctrl+I         { move-workspace-up; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
@@ -653,3 +653,5 @@ include "dms/windowrules.kdl"
 include "dms/cursor.kdl"
 
 include "dms/outputs.kdl"
+include "dms/layout.kdl"
+include "dms/binds.kdl"
