@@ -35,3 +35,12 @@ vim.keymap.set("n", "<Esc>", function()
     vim.cmd("noh")
   end
 end, { desc = "Normal → Terminal (if terminal buffer)" })
+
+-- vim.keymap.set("n", "<leader>n", function()
+--   Snacks.notifier.show_history()
+-- end, { desc = "Notification History" })
+
+-- При нажатии <leader>n открывает подменю WhichKey для Noice
+vim.keymap.set("n", "<leader>n", function()
+  require("which-key").show({ keys = "<leader>sn" })
+end, { desc = "Noice Menu" })

@@ -1,17 +1,15 @@
 return {
-
   "folke/tokyonight.nvim",
   opts = {
     style = "night", -- night | storm | moon | day
-    transparent = false,
+    transparent = true, -- Включает базовую прозрачность
     styles = {
-      sidebars = "dark",
-      floats = "dark",
+      sidebars = "transparent", -- Делает прозрачными Neo-tree, Snacks Explorer и др.
+      floats = "transparent", -- Делает прозрачными плавающие окна (Which-key, Mason, Noice)
+      keywords = { italic = false },
+      comments = { italic = false },
+      functions = { italic = false },
+      variables = { italic = false },
     },
-    on_colors = function(colors)
-      -- основной фон
-      colors.bg = "#0b0f14"
-      colors.bg_dark = "#090c10"
-    end,
   },
 }

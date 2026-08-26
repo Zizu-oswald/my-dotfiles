@@ -1,4 +1,8 @@
 set number
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 " An example for a vimrc file.
 "
 " Maintainer:	The Vim Project <https://github.com/vim/vim>
@@ -52,13 +56,29 @@ augroup END
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
 " Автоматически использовать системный буфер
 set clipboard=unnamedplus
 
 " Подсвечивает позицию курсора долю секунды при больших перемещениях
 autocmd CursorMoved * normal! m'
 
-" call plug#begin()
-" Plug 'scrooloose/nerdtree'
+call plug#begin()
 
-" call plug#end()
+Plug 'preservim/nerdtree'
+
+call plug#end()
+
+" Открыть/закрыть NERDTree по нажатию Ctrl+n
+nnoremap <C-n> :NERDTreeToggle<CR>
+" Найти текущий файл в NERDTree по нажатию Ctrl+f
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Показывать скрытые файлы по умолчанию
+let NERDTreeShowHidden=1
+
+" Игнорировать служебные папки и файлы
+let NERDTreeIgnore=['\.git$', '\.pyc$', '__pycache__']
+
+" Закрывать Vim, если NERDTree остался единственным открытым окном
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif

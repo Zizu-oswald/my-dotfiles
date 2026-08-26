@@ -7,9 +7,11 @@ vim.opt.shiftwidth = 4 -- Размер отступа для >> и <<
 vim.opt.softtabstop = 4 -- Количество пробелов при редактировании
 vim.opt.expandtab = true -- Преобразовать табы в пробелы
 
+-- Высота командной строки (0 = полностью скрывать, когда не используется)
+vim.opt.cmdheight = 0
+
 vim.opt.number = true -- обычные номера строк
 vim.opt.relativenumber = true -- выключить относительные
 
-vim.lsp.inlay_hint.enable(false)
-
+vim.opt.spell = false
 --And I can always use the shortcut <leader>uh to toggle the inlay hint if when needed
