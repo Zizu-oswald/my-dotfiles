@@ -27,6 +27,7 @@ return {
           kind = {
             "shell_out",
             "shell_err",
+            "list_cmd",
           },
         },
         view = "split",
