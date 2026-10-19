@@ -10,6 +10,8 @@ return {
     },
 
     picker = {
+      hidden = true,
+      ignored = true,
       sources = {
         explorer = {
           layout = {

@@ -121,6 +121,6 @@ bindkey -s '^y' 'y\n'
 # 8. POWERLEVEL10K КОНФИГУРАЦИЯ
 # ======================================================
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 # zsh-defer fastfetch
 # (sleep 3 && fastfetch &)
